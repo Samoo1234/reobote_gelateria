@@ -155,8 +155,18 @@ export async function getSurveyStats() {
     return null;
   }
   
+  // Define o tipo para o objeto questionStats
+  interface QuestionStat {
+    count: number;
+    sum: number;
+    ratings: number[];
+    average?: number;
+    percentages?: number[];
+  }
+  
   // Calcula médias por pergunta
-  const questionStats = {};
+  const questionStats: Record<string, QuestionStat> = {};
+  
   answers?.forEach(answer => {
     if (!questionStats[answer.survey_id]) {
       questionStats[answer.survey_id] = {
