@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pesquisa de Satisfação - Sorveteria</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+    <div class="container">
+        <div class="survey-card">
+            <div class="header">
+                <div class="logo">
+                    <i class="fas fa-ice-cream"></i>
+                </div>
+                <h1>Pesquisa de Satisfação</h1>
+                <p>Sua opinião é muito importante para nós! Ajude-nos a melhorar sua experiência.</p>
+            </div>
+            
+            <form id="satisfaction-form">
+                <div class="rating-container">
+                    <h2>Como você avalia sua experiência?</h2>
+                    <div class="stars" id="experience-stars">
+                        <i class="far fa-star" data-rating="1"></i>
+                        <i class="far fa-star" data-rating="2"></i>
+                        <i class="far fa-star" data-rating="3"></i>
+                        <i class="far fa-star" data-rating="4"></i>
+                        <i class="far fa-star" data-rating="5"></i>
+                    </div>
+                    <p id="experience-text">Selecione uma classificação</p>
+                    <input type="hidden" id="experience-value" name="experience" value="0">
+                </div>
+                
+                <div class="rating-container">
+                    <h2>Com que frequência você visita nossa sorveteria?</h2>
+                    <div class="stars" id="frequency-stars">
+                        <i class="far fa-star" data-rating="1"></i>
+                        <i class="far fa-star" data-rating="2"></i>
+                        <i class="far fa-star" data-rating="3"></i>
+                        <i class="far fa-star" data-rating="4"></i>
+                        <i class="far fa-star" data-rating="5"></i>
+                    </div>
+                    <p id="frequency-text">Selecione uma classificação</p>
+                    <input type="hidden" id="frequency-value" name="frequency" value="0">
+                </div>
+                
+                <div class="rating-container">
+                    <h2>Como você classificaria a variedade de sabores de sorvete disponíveis?</h2>
+                    <div class="stars" id="variety-stars">
+                        <i class="far fa-star" data-rating="1"></i>
+                        <i class="far fa-star" data-rating="2"></i>
+                        <i class="far fa-star" data-rating="3"></i>
+                        <i class="far fa-star" data-rating="4"></i>
+                        <i class="far fa-star" data-rating="5"></i>
+                    </div>
+                    <p id="variety-text">Selecione uma classificação</p>
+                    <input type="hidden" id="variety-value" name="variety" value="0">
+                </div>
+                
+                <div class="rating-container">
+                    <h2>Como você classificaria a qualidade e o sabor dos nossos sorvetes?</h2>
+                    <div class="stars" id="quality-stars">
+                        <i class="far fa-star" data-rating="1"></i>
+                        <i class="far fa-star" data-rating="2"></i>
+                        <i class="far fa-star" data-rating="3"></i>
+                        <i class="far fa-star" data-rating="4"></i>
+                        <i class="far fa-star" data-rating="5"></i>
+                    </div>
+                    <p id="quality-text">Selecione uma classificação</p>
+                    <input type="hidden" id="quality-value" name="quality" value="0">
+                </div>
+                
+                <div class="rating-container">
+                    <h2>Quão satisfeito você está com o atendimento ao cliente?</h2>
+                    <div class="stars" id="service-stars">
+                        <i class="far fa-star" data-rating="1"></i>
+                        <i class="far fa-star" data-rating="2"></i>
+                        <i class="far fa-star" data-rating="3"></i>
+                        <i class="far fa-star" data-rating="4"></i>
+                        <i class="far fa-star" data-rating="5"></i>
+                    </div>
+                    <p id="service-text">Selecione uma classificação</p>
+                    <input type="hidden" id="service-value" name="service" value="0">
+                </div>
+                
+                <div class="rating-container">
+                    <h2>Você recomendaria nossa sorveteria a amigos e familiares?</h2>
+                    <div class="stars" id="recommend-stars">
+                        <i class="far fa-star" data-rating="1"></i>
+                        <i class="far fa-star" data-rating="2"></i>
+                        <i class="far fa-star" data-rating="3"></i>
+                        <i class="far fa-star" data-rating="4"></i>
+                        <i class="far fa-star" data-rating="5"></i>
+                    </div>
+                    <p id="recommend-text">Selecione uma classificação</p>
+                    <input type="hidden" id="recommend-value" name="recommend" value="0">
+                </div>
+                
+                <div class="form-group">
+                    <label for="name">Nome Completo</label>
+                    <input type="text" id="name" name="name" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="email">E-mail</label>
+                    <input type="email" id="email" name="email" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="phone">Telefone</label>
+                    <input type="tel" id="phone" name="phone" placeholder="(00) 00000-0000" required>
+                </div>
+                
+                <div class="form-group">
+                    <label for="comments">Comentários (opcional)</label>
+                    <textarea id="comments" name="comments" rows="4"></textarea>
+                </div>
+                
+                <button type="submit" class="submit-btn">Enviar Avaliação</button>
+            </form>
+            
+            <div id="thank-you" class="hidden">
+                <div class="thank-you-content">
+                    <i class="fas fa-check-circle"></i>
+                    <h2>Obrigado pela sua avaliação!</h2>
+                    <p>Sua opinião é muito importante para continuarmos melhorando nossos produtos e serviços.</p>
+                    <button id="new-survey" class="submit-btn">Nova Avaliação</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
